@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/RTKRealChatConnection-Swift.h</key>
 		<data>
-		JF71gMEG/wYXQlqvkYo0Mm86Pl0=
+		RLlr5PUVWIs7BUXfmSn0aZL1xwk=
 		</data>
 		<key>Headers/RTKRealChatConnection.h</key>
 		<data>
@@ -14,19 +14,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Qq+CBanKQiegNS+jnJUfNAOU30I=
+		mg3VdWapBu2YyK3n0PPlMzf3L8k=
 		</data>
 		<key>Modules/RTKRealChatConnection.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		8q+nwCHIlYCtrm4pBXEQgXDxyh0=
+		j+3K9eERG9EdlXdWhTjh9Pr13oI=
 		</data>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		QQhCXCK3sG10QIKIk0hYEgydGP4=
+		ISoNULTfvuMnPYA7ifiaXTWUpwo=
 		</data>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		IdSEwQHseSBhnFyGhmbnsqaikhQ=
+		224MLOOzjzQ/+6GWnW+uGuvX0GY=
 		</data>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		IdSEwQHseSBhnFyGhmbnsqaikhQ=
+		224MLOOzjzQ/+6GWnW+uGuvX0GY=
 		</data>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cttyyW+/IEr6RKxtvM1+VTLHCKo=
+		wKZ+yjePlhK7ZVV1yV3OuNui/aw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NDYpHthY5f4y8LRxLNyl+kPj8e0Swg8jwBKnCP1RY7s=
+			oeajANZnej/HjRtfP5c/ABogIC6eygbTFOvX1l7H3AE=
 			</data>
 		</dict>
 		<key>Headers/RTKRealChatConnection.h</key>
@@ -65,21 +65,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f39acQ9dEdtPF0tZ2r3JkiOY/Bc1FOYpBgArsTmqemk=
+			OLSBs35XZLrqfjCNk7CL1jawoBqqIJSH224VbCC4ZVk=
 			</data>
 		</dict>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L7nw6v5xP22cnhO+uFrdk5kMEQ73j0R8DyOLbA+zkZM=
+			shRVnEaty4e049QsbqestqL3OMMaH5E+x9NPRZlxz1I=
 			</data>
 		</dict>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kW5bLQYhJkNP52dqJy88fD85QshVfkLXAUvwZ/nVG2Y=
+			zmp/OC653HQssM6b1na9HYzCS0Pa7t/g0gRZ+JQ+xtk=
 			</data>
 		</dict>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -93,14 +93,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kW5bLQYhJkNP52dqJy88fD85QshVfkLXAUvwZ/nVG2Y=
+			zmp/OC653HQssM6b1na9HYzCS0Pa7t/g0gRZ+JQ+xtk=
 			</data>
 		</dict>
 		<key>Modules/RTKRealChatConnection.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OFtmdIwwB4k1cRn2VZgd3nI1h8nuNNJzSvosRv6kAoc=
+			XhaZQ8cBDWws4rOUVX0PTQtLYKYPD7taZ6TgMcmWF5c=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

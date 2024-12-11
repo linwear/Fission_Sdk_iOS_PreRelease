@@ -3215,37 +3215,6 @@
           },
           {
             "kind": "Function",
-            "name": "transportDidChangeState",
-            "printedName": "transportDidChangeState(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "RTKPacketTransport",
-                "printedName": "RTKLEFoundation.RTKPacketTransport",
-                "usr": "c:objc(cs)RTKPacketTransport"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@RTKRealChatConnection@objc(cs)RealChatPeripheralConnection(im)transportDidChangeState:",
-            "mangledName": "$s21RTKRealChatConnection04Realb10PeripheralC0C23transportDidChangeStateyySo18RTKPacketTransportCF",
-            "moduleName": "RTKRealChatConnection",
-            "overriding": true,
-            "objc_name": "transportDidChangeState:",
-            "declAttributes": [
-              "ObjC",
-              "Override",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "onReceive",
             "printedName": "onReceive(event:)",
             "children": [
@@ -3268,7 +3237,8 @@
             "overriding": true,
             "declAttributes": [
               "Override",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
