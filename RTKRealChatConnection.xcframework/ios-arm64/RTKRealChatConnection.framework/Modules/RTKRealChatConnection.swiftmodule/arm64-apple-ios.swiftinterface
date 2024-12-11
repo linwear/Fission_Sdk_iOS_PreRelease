@@ -64,6 +64,7 @@ open class RTKBeeEvent {
   }
   public var onPromptAudioTransmissionStateUpdateHandler: ((_ state: RTKRealChatConnection.RealChatPeripheralConnection.AudioTransmissionState, _ promptMsg: RTKRealChatConnection.RealChatPeripheralConnection.ChatMessage, _ file: RTKAudioStreaming.FileSink) -> Swift.Void)?
   public var onResponseAudioTransmissionStateUpdateHandler: ((_ state: RTKRealChatConnection.RealChatPeripheralConnection.AudioTransmissionState, _ responseMsg: RTKRealChatConnection.RealChatPeripheralConnection.ChatMessage, _ file: RTKAudioStreaming.FileSource) -> Swift.Void)?
+  @objc override public func transportDidChangeState(_ transport: RTKLEFoundation.RTKPacketTransport)
   override public func onReceive(event evt: RTKRealChatConnection.RTKBeeEvent)
   @objc override dynamic public init(peripheral: CoreBluetooth.CBPeripheral)
   @objc override dynamic public init()

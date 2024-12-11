@@ -326,6 +326,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSArray<CBUUID
 /// If there is a completion session happening, you can observe the transmission status by several block properties which is invoked when the partical event occurs.
 SWIFT_CLASS("_TtC21RTKRealChatConnection28RealChatPeripheralConnection")
 @interface RealChatPeripheralConnection : RTKBeePeripheralConnection
+- (void)transportDidChangeState:(RTKPacketTransport * _Nonnull)transport;
 - (nonnull instancetype)initWithPeripheral:(CBPeripheral * _Nonnull)peripheral OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
