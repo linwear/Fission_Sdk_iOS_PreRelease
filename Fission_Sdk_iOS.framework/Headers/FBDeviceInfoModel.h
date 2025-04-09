@@ -112,9 +112,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGSize watchDisplaySize;
 
 /**
+ 手表显示圆角｜Watch display rounded corners
+ */
+@property (nonatomic, assign) NSInteger watchDisplayRadius;
+
+/**
  表盘缩略图显示分辨率宽高｜Dial thumbnail display resolution width and height
  */
 @property (nonatomic, assign) CGSize dialThumbnailDisplaySize;
+
+/**
+ 表盘缩略图显示圆角｜Watch face thumbnails display rounded corners
+ */
+@property (nonatomic, assign) NSInteger dialThumbnailDisplayRadius;
 
 /**
  音频库版本｜Audio library version
@@ -145,6 +155,21 @@ NS_ASSUME_NONNULL_BEGIN
  系统参数空间尺寸｜System parameter space size
  */
 @property (nonatomic, assign) NSInteger systemSize;
+
+/**
+ nandFlashID
+ */
+@property (nonatomic, assign) NSInteger nandFlashID;
+
+/**
+ norFlashID
+ */
+@property (nonatomic, assign) NSInteger norFlashID;
+
+/**
+ socID
+ */
+@property (nonatomic, copy) NSString *socID;
 
 @end
 

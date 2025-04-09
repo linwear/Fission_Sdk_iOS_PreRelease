@@ -45,11 +45,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  TXT电子书UTF8编码｜TXT E-book UTF8 encoding
- @param eBookData                                 将要处理的电子书TXT数据｜E-book TXT data to be processed
+ @param eBookFilePath                             将要处理的电子书TXT文件路径｜The path of the e-book TXT file to be processed
 */
-+ (void)fbHandleEBookUTF8EncodingWithData:(NSData * _Nonnull)eBookData
++ (void)fbHandleEBookUTF8EncodingWithFilePath:(NSString * _Nonnull)eBookFilePath
                                  callback:(void(^)(NSData * _Nullable eBookData, NSError * _Nullable error))callback;
 
+
+#if defined(FB_INCLUDE_ADVANCED_CUSTOM_DIAL) && FB_INCLUDE_ADVANCED_CUSTOM_DIAL
 
 /**
  生成多项目自定义表盘bin文件数据，由于表盘内存空间有限，自定义内容最多不能超过16个控件，不同样式所占用的控件个数都有所不同。添加自定义内容前需要检查表盘空间是否足够｜Generate multi-item custom watch face bin file data. Due to the limited memory space of the watch face, the maximum number of custom content cannot exceed 16 controls, and the number of controls occupied by different styles is different. Before adding custom content, you need to check whether there is enough space on the dial
@@ -80,6 +82,8 @@ NS_ASSUME_NONNULL_BEGIN
  @param dialsModel                                 自定义表盘参数模型｜Custom dial parameter model
 */
 - (NSData *)fbGenerateMultiProjectCustomDialBinFileDataWithDialsModel:(FBMultipleCustomDialsModel * _Nonnull)dialsModel;
+
+#endif
 
 
 /**
@@ -149,11 +153,23 @@ NS_ASSUME_NONNULL_BEGIN
  11.FB_OTANotification_Ring_Alarm
     ClockSound_L******_xxxxxxxxxx_AAAA_BBBB.mp3（其中******为文件大小，xxxxxxxxxx为时间戳，AAAA为唯一ID，BBBB为显示名称｜Where ****** is the file size, xxxxxxxxxx is the timestamp, AAAA is the unique ID, and BBBB is the display name）
  
+ 12.FB_OTANotification_OfflineVoice_Package
+    无需重新命名，即用原始文件的名称｜No need to rename, just use the name of the original file
+ 
+ 13.FB_OTANotification_Album_Image
+    Photo_L******_xxxxxxxxxx.bin（其中******为文件大小，xxxxxxxxxx为时间戳｜Where ****** is the file size, xxxxxxxxxx is the timestamp）
+ 
  
  更多...待拓展｜More...to be expanded
  */
 + (NSData *)createFileName:(NSString * _Nonnull)fileName withFileData:(NSData * _Nonnull)fileData withOTAType:(FB_OTANOTIFICATION)OTAType;
 
+
+/**
+ 相册图片处理（按表盘分辨率）| Album picture processing (according to the resolution of the dial)
+ @param image           待处理的图片｜Pending images
+*/
++ (NSData *)albumImage:(UIImage * _Nonnull)image;
 
 @end
 

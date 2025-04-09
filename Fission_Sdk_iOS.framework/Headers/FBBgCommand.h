@@ -608,6 +608,24 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)fbDeleteListFileInfoWithType:(FB_LISTFILEINFORTYPE)type withList:(NSArray <FBListFileInfoModel *> * _Nonnull)modelList withBlock:(FBResultCallBackBlock _Nonnull)fbBlock;
 
 
+#pragma mark - 读取文件数据-断点续传｜Read file data - breakpoint resume
+/**
+ 读取文件数据-断点续传｜Read file data - breakpoint resume
+ @param fileName                    文件名称｜File Name
+ @param resumeOffset                断点续传偏移位置，首次为0，续传为已接收的数据长度｜The offset position of the breakpoint resume transmission is 0 for the first transmission and the length of the received data for the next transmission.
+*/
+- (void)fbReadFileDataName:(NSString * _Nonnull)fileName resumeOffset:(NSInteger)resumeOffset withBlock:(FBGetResumeDownloadFileBlock _Nonnull)fbBlock;
+
+
+#pragma mark - 修改指定文件名称｜Modify the specified file name
+/**
+ 修改指定文件名称｜Modify the specified file name
+ @param fileName                    文件名称｜File Name
+ @param replaceName                 修改替换的名称｜Modify the replacement name
+*/
+- (void)fbSetFileDataName:(NSString * _Nonnull)fileName replaceName:(NSString * _Nonnull)replaceName withBlock:(FBResultCallBackBlock _Nonnull)fbBlock;
+
+
 #pragma mark - 获取当前使用的铃声信息｜Get the currently used ringtone information
 /**
  获取当前使用的铃声信息｜Get the currently used ringtone information
@@ -621,6 +639,21 @@ NS_ASSUME_NONNULL_BEGIN
  @param modelList                   铃声信息｜Ringtone information
 */
 - (void)fbSetCurrentRingtoneInfoWithList:(NSArray <FBRingtoneInfoModel *> * _Nonnull)modelList withBlock:(FBResultCallBackBlock _Nonnull)fbBlock;
+
+
+#pragma mark - 获取离线语音信息｜Get offline voice information
+/**
+ 获取离线语音信息｜Get offline voice information
+*/
+- (void)fbGetOfflineVoiceInfoWithBlock:(FBGetOfflineVoiceInfoBlock _Nonnull)fbBlock;
+
+
+#pragma mark - 设置设备授权码｜Set device authorization code
+/**
+ 设置设备授权码｜Set device authorization code
+ @param modelList                   设备授权码｜Device authorization code
+*/
+- (void)fbSetDeviceAuthCodeWithList:(NSArray <FBDeviceAuthCodeModel *> * _Nonnull)modelList withBlock:(FBResultCallBackBlock _Nonnull)fbBlock;
 
 @end
 
