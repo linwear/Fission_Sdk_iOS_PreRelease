@@ -30,12 +30,9 @@ Pod::Spec.new do |spec|
 
   spec.pod_target_xcconfig      = { 
                                     'OTHER_LDFLAGS' => '-lObjC',
-
+                                    'OTHER_SWIFT_FLAGS' => '-enable-experimental-cxx-interop',
                                     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
-                                    'CLANG_CXX_LIBRARY' => 'libc++',
-                                    'OTHER_CPLUSPLUSFLAGS' => '-stdlib=libc++',    
-                                    'GCC_PREFIX_HEADER_PUSHPOP' => 'YES',    
-                                    'GCC_USE_CPP_HEADER_INCLUDES' => 'YES'
+                                    'CLANG_CXX_LIBRARY' => 'libc++'
                                   }
   spec.libraries = 'c++'
   
