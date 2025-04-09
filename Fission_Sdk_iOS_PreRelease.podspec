@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name                     = "Fission_Sdk_iOS_PreRelease"
-  spec.version                  = "1.0.0"
+  spec.version                  = "3.2.8"
   spec.summary                  = "Fission智能手表SDK for iOS"
   spec.description              = <<-DESC
                                   Fission 智能手表的 iOS 框架，负责与智能手表设备通信等功能的封装｜Framework Function: iOS framework for Fission smart watch, which is responsible for the communication with the watch.
@@ -25,12 +25,18 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AllDependencys' do |allDependency|
-    allDependency.vendored_frameworks     = 'RTKOTASDK.xcframework', 'RTKLEFoundation.xcframework', 'RTKRealChatConnection.xcframework', 'RTKAudioStreaming.xcframework', 'SCompressLib.framework', 'opus.framework'
-    allDependency.dependency                'ffmpeg-kit-ios-full'
+    allDependency.vendored_frameworks     = 'RTKOTASDK.xcframework', 'RTKLEFoundation.xcframework', 'RTKRealChatConnection.xcframework', 'RTKAudioStreaming.xcframework', 'SCompressLib.framework', 'opus.framework', 'FFmpeg/ffmpegkit.xcframework', 'FFmpeg/libavfilter.xcframework', 'FFmpeg/libswscale.xcframework', 'FFmpeg/libswresample.xcframework', 'FFmpeg/libavcodec.xcframework', 'FFmpeg/libavutil.xcframework', 'FFmpeg/libavformat.xcframework', 'FFmpeg/libavdevice.xcframework'
   end
 
   spec.pod_target_xcconfig      = { 
-                                  'OTHER_LDFLAGS' => '-lObjC',
+                                    'OTHER_LDFLAGS' => '-lObjC',
+
+                                    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
+                                    'CLANG_CXX_LIBRARY' => 'libc++',
+                                    'OTHER_CPLUSPLUSFLAGS' => '-stdlib=libc++',    
+                                    'GCC_PREFIX_HEADER_PUSHPOP' => 'YES',    
+                                    'GCC_USE_CPP_HEADER_INCLUDES' => 'YES'
                                   }
+  spec.libraries = 'c++'
   
 end
