@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name                     = "Fission_Sdk_iOS_PreRelease"
-  spec.version                  = "3.2.8"
+  spec.version                  = "3.2.9"
   spec.summary                  = "Fission智能手表SDK for iOS"
   spec.description              = <<-DESC
                                   Fission 智能手表的 iOS 框架，负责与智能手表设备通信等功能的封装｜Framework Function: iOS framework for Fission smart watch, which is responsible for the communication with the watch.
@@ -25,15 +25,11 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'AllDependencys' do |allDependency|
-    allDependency.vendored_frameworks     = 'RTKOTASDK.xcframework', 'RTKLEFoundation.xcframework', 'RTKRealChatConnection.xcframework', 'RTKAudioStreaming.xcframework', 'SCompressLib.framework', 'opus.framework', 'FFmpeg/ffmpegkit.xcframework', 'FFmpeg/libavfilter.xcframework', 'FFmpeg/libswscale.xcframework', 'FFmpeg/libswresample.xcframework', 'FFmpeg/libavcodec.xcframework', 'FFmpeg/libavutil.xcframework', 'FFmpeg/libavformat.xcframework', 'FFmpeg/libavdevice.xcframework'
+    allDependency.vendored_frameworks     = 'RTKOTASDK.xcframework', 'RTKLEFoundation.xcframework', 'RTKRealChatConnection.xcframework', 'RTKAudioStreaming.xcframework', 'libRTKCompression.xcframework', 'SCompressLib.framework', 'opus.framework', 'FFmpeg/ffmpegkit.xcframework', 'FFmpeg/libavfilter.xcframework', 'FFmpeg/libswscale.xcframework', 'FFmpeg/libswresample.xcframework', 'FFmpeg/libavcodec.xcframework', 'FFmpeg/libavutil.xcframework', 'FFmpeg/libavformat.xcframework', 'FFmpeg/libavdevice.xcframework'
   end
 
   spec.pod_target_xcconfig      = { 
                                     'OTHER_LDFLAGS' => '-lObjC',
-                                    'OTHER_SWIFT_FLAGS' => '-enable-experimental-cxx-interop',
-                                    'CLANG_CXX_LANGUAGE_STANDARD' => 'c++17',
-                                    'CLANG_CXX_LIBRARY' => 'libc++'
                                   }
-  spec.libraries = 'c++'
-  
+                                    
 end
