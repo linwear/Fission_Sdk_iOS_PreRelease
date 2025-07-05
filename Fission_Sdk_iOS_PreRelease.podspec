@@ -24,8 +24,12 @@ Pod::Spec.new do |spec|
     spec.public_header_files    = public_header_files
   end
 
-  spec.subspec 'AllDependencys' do |allDependency|
-    allDependency.vendored_frameworks     = 'RTKOTASDK.xcframework', 'RTKLEFoundation.xcframework', 'RTKRealChatConnection.xcframework', 'RTKAudioStreaming.xcframework', 'libRTKCompression.xcframework', 'SCompressLib.framework', 'opus.framework', 'FFmpeg/ffmpegkit.xcframework', 'FFmpeg/libavfilter.xcframework', 'FFmpeg/libswscale.xcframework', 'FFmpeg/libswresample.xcframework', 'FFmpeg/libavcodec.xcframework', 'FFmpeg/libavutil.xcframework', 'FFmpeg/libavformat.xcframework', 'FFmpeg/libavdevice.xcframework'
+  spec.subspec 'rtk_dependencys' do |rtk|
+    rtk.vendored_frameworks     = 'RTKOTASDK.xcframework', 'RTKLEFoundation.xcframework', 'RTKRealChatConnection.xcframework', 'RTKAudioStreaming.xcframework', 'libRTKCompression.xcframework'
+  end
+
+  spec.subspec 'hs_dependencys' do |hs|
+    hs.vendored_frameworks     = 'SCompressLib.framework', 'opus.framework', 'FFmpeg/ffmpegkit.xcframework', 'FFmpeg/libavfilter.xcframework', 'FFmpeg/libswscale.xcframework', 'FFmpeg/libswresample.xcframework', 'FFmpeg/libavcodec.xcframework', 'FFmpeg/libavutil.xcframework', 'FFmpeg/libavformat.xcframework', 'FFmpeg/libavdevice.xcframework'
   end
 
   spec.pod_target_xcconfig      = { 
