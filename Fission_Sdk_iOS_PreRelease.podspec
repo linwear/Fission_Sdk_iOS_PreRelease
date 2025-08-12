@@ -19,6 +19,8 @@ Pod::Spec.new do |spec|
 
   public_header_files           = 'Fission_Sdk_iOS.framework/Headers/*.{h,m}'
 
+  spec.dependency 'Protobuf'
+
   spec.subspec 'Headers' do |spec|
     spec.source_files           = public_header_files
     spec.public_header_files    = public_header_files
