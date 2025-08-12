@@ -29,7 +29,7 @@ Pod::Spec.new do |spec|
   end
 
   spec.subspec 'hs_dependencys' do |hs|
-    hs.vendored_frameworks     = 'SCompressLib.framework', 'opus.framework', 'FFmpeg/ffmpegkit.xcframework', 'FFmpeg/libavfilter.xcframework', 'FFmpeg/libswscale.xcframework', 'FFmpeg/libswresample.xcframework', 'FFmpeg/libavcodec.xcframework', 'FFmpeg/libavutil.xcframework', 'FFmpeg/libavformat.xcframework', 'FFmpeg/libavdevice.xcframework', 'slm_remote_iOS.framework'
+    hs.vendored_frameworks     = 'SCompressLib.framework', 'opus.framework', 'FFmpeg/ffmpegkit.xcframework', 'FFmpeg/libavfilter.xcframework', 'FFmpeg/libswscale.xcframework', 'FFmpeg/libswresample.xcframework', 'FFmpeg/libavcodec.xcframework', 'FFmpeg/libavutil.xcframework', 'FFmpeg/libavformat.xcframework', 'FFmpeg/libavdevice.xcframework', 'slm_remote_iOS.framework', 'ChatEmpowerSDK.framework', 'Starscream.framework', 'SILKDecoder.framework'
   end
 
   spec.pod_target_xcconfig      = { 
