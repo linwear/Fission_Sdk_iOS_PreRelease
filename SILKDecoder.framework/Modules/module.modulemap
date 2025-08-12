@@ -1,0 +1,6 @@
+framework module SILKDecoder {
+  umbrella header "SILKDecoder.h"
+  export *
+
+  module * { export * }
+}

@@ -1,0 +1,11 @@
+framework module ChatEmpowerSDK {
+  umbrella header "ChatEmpowerSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module ChatEmpowerSDK.Swift {
+  header "ChatEmpowerSDK-Swift.h"
+  requires objc
+}

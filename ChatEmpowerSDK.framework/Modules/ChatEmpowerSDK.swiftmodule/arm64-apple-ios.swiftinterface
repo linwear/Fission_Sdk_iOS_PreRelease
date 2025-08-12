@@ -1,0 +1,174 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ChatEmpowerSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
+@_exported import ChatEmpowerSDK
+import CommonCrypto
+import CryptoKit
+import Foundation
+import Network
+import SILKDecoder
+import Security
+import Starscream
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum AuthDeviceType : Swift.Int {
+  case chatEmpower
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public typealias AICompletionHandler = (_ result: [Swift.String : Any]?, _ error: (any Swift.Error)?) -> Swift.Void
+public typealias AIStreamResultHandler = (_ result: [Swift.String : Any]?, _ isFinal: Swift.Bool, _ error: (any Swift.Error)?) -> Swift.Void
+@objc public enum AIAudioEncodingFormat : Swift.Int {
+  case pcm
+  case mp3
+  case m4a
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class AIPCMFormat : ObjectiveC.NSObject {
+  @objc public init(sampleRate: Swift.Int = 16000, bitDepth: Swift.Int = 16, channels: Swift.Int = 1)
+  @objc deinit
+}
+public typealias CompletionHandler = (_ returnData: [Swift.String : Any]?, _ error: (any Swift.Error)?) -> Swift.Void
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class ChatEmpowerHelper : ObjectiveC.NSObject {
+  @objc public static let shareInstance: ChatEmpowerSDK.ChatEmpowerHelper
+  @objc public static var logEnable: Swift.Bool
+  @objc public var isTestEnv: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static func sdkVersion() -> Swift.String
+  @objc public func auth(mac: Swift.String, channel: Swift.String, deviceId: Swift.String?, complete: ChatEmpowerSDK.CompletionHandler?)
+  @objc public func login(clourse: @escaping ChatEmpowerSDK.CompletionHandler)
+  @objc public func logout(clourse: @escaping ChatEmpowerSDK.CompletionHandler)
+  @objc public func sendText(_ textMessage: ChatEmpowerSDK.WxTextMessage, completion: ChatEmpowerSDK.CompletionHandler?)
+  @objc public func sendVoice(_ voiceMessage: ChatEmpowerSDK.WxVoiceMessage, completion: ChatEmpowerSDK.CompletionHandler?)
+  @objc public func getChatRoomInfo(qid: Swift.String, completion: @escaping ChatEmpowerSDK.CompletionHandler)
+  @objc public func downloadVoice(fromWxid: Swift.String, voiceNewMsgId: Swift.Int, voicelength: Swift.Int, voiceBufid: Swift.String, completion: @escaping ChatEmpowerSDK.CompletionHandler)
+  @objc public func registerReceiveMsgCallBack(clourse: ChatEmpowerSDK.CompletionHandler?)
+  @objc deinit
+}
+@objc public enum CEClientState : Swift.Int {
+  case ready = 0
+  case waitingQR
+  case waitingScan
+  case didScan
+  case loginSuccess
+  case loginFailure
+  case logout
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+final public class NetworkRelayTool {
+  public struct Configuration {
+    public init(port: Swift.UInt16, enableDebugLog: Swift.Bool = true)
+  }
+  public init(config: ChatEmpowerSDK.NetworkRelayTool.Configuration)
+  @objc deinit
+  final public func start(complete: @escaping (Swift.Bool, Swift.UInt16) -> Swift.Void)
+  final public func stop()
+}
+public enum WxParsedMessageType {
+  case voice(attributes: [Swift.String : Swift.String])
+  case image(attributes: [Swift.String : Swift.String])
+  case unknown
+}
+@objc @_inheritsConvenienceInitializers public class WxXMLParser : ObjectiveC.NSObject, Foundation.XMLParserDelegate {
+  public func parse(xml: Swift.String) -> ChatEmpowerSDK.WxParsedMessageType
+  @objc public func parser(_ parser: Foundation.XMLParser, didStartElement elementName: Swift.String, namespaceURI: Swift.String?, qualifiedName qName: Swift.String?, attributes attributeDict: [Swift.String : Swift.String] = [:])
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class BDASRParams : ChatEmpowerSDK.BaseParams {
+  @objc public var dev_pid: Swift.Int
+  @objc public var filePath: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class AIAudioStreamProvider : ObjectiveC.NSObject {
+  @objc public var audioEncode: ChatEmpowerSDK.AIAudioEncodingFormat
+  @objc public var pcmFormat: ChatEmpowerSDK.AIPCMFormat
+  @objc public func feed(data: Foundation.Data)
+  @objc public func stop()
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers @objc public class WxSendMessage : ObjectiveC.NSObject {
+  @objc final public let toWxid: Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class WxVoiceMessage : ChatEmpowerSDK.WxSendMessage {
+  @objc public var voiceBase64: Swift.String
+  @objc public var voiceTime: Swift.Int
+  @objc public var voiceType: Swift.Int
+  @objc public init(voiceBase64: Swift.String, voiceTime: Swift.Int, voiceType: Swift.Int, toWxid: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class WxTextMessage : ChatEmpowerSDK.WxSendMessage {
+  @objc public var text: Swift.String
+  @objc public init(text: Swift.String, toWxid: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class AIHelper : ObjectiveC.NSObject {
+  @objc public static let shareInstance: ChatEmpowerSDK.AIHelper
+  @objc public func startASR(with params: ChatEmpowerSDK.BDASRParams, completion: @escaping ChatEmpowerSDK.AICompletionHandler)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class BaseParams : ObjectiveC.NSObject {
+  @objc public var qid: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func CEPrint(_ msg: Any..., level: ChatEmpowerSDK.LogLevel = .info, tag: Swift.String? = "CE")
+public enum LogLevel {
+  case info
+  case infoPrivate
+  public static func == (a: ChatEmpowerSDK.LogLevel, b: ChatEmpowerSDK.LogLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CEError : Swift.Int {
+  case unknown
+  case paramsError
+  case initFailure
+  case serverReturnError
+  case parseDataError
+  case loginTimeout
+  case loginRefused
+  case notlogin
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension ChatEmpowerSDK.AuthDeviceType : Swift.Equatable {}
+extension ChatEmpowerSDK.AuthDeviceType : Swift.Hashable {}
+extension ChatEmpowerSDK.AuthDeviceType : Swift.RawRepresentable {}
+extension ChatEmpowerSDK.AIAudioEncodingFormat : Swift.Equatable {}
+extension ChatEmpowerSDK.AIAudioEncodingFormat : Swift.Hashable {}
+extension ChatEmpowerSDK.AIAudioEncodingFormat : Swift.RawRepresentable {}
+extension ChatEmpowerSDK.CEClientState : Swift.Equatable {}
+extension ChatEmpowerSDK.CEClientState : Swift.Hashable {}
+extension ChatEmpowerSDK.CEClientState : Swift.RawRepresentable {}
+extension ChatEmpowerSDK.LogLevel : Swift.Equatable {}
+extension ChatEmpowerSDK.LogLevel : Swift.Hashable {}
+extension ChatEmpowerSDK.CEError : Swift.Equatable {}
+extension ChatEmpowerSDK.CEError : Swift.Hashable {}
+extension ChatEmpowerSDK.CEError : Swift.RawRepresentable {}
